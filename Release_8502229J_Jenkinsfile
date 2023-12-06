@@ -31,8 +31,8 @@ stages{
         }
         }
     }
-  	stage ('S4_8502229J') {
-                   steps {
+  	  stage('S4 8502229J') {
+            steps {
                 script {
                     def userInput = input(
                         message: "8502229J, proceed to release the work to the next phase?",
@@ -41,13 +41,13 @@ stages{
                         ]
                     )
                     
-                
+                    // Storing the user input for use in the next stage
                     currentBuild.rawBuild.addAction(new ParametersAction([
                         new StringParameterValue('userInput', userInput)
                     ]))
                 }
             }
-                }
+        }
 
 
 
