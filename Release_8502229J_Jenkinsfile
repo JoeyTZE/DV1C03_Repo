@@ -46,16 +46,19 @@ pipeline {
         }
 
         stage('S5 8502229J') {
-            steps {
+           steps {
                 script {
                     def userInput = env.USER_INPUT
 
-                      if (userInput == 'Proceed') {
+                    if (userInput == 'Proceed') {
                         echo "User chose to proceed. Releasing the work to the next phase."
                         // Add your steps to release work to the next phase here
-                    } else {
+                    } else if (userInput == 'Abort') {
                         echo "User chose to abort. Aborting the process."
-                        // Add any necessary steps for aborting here
+                        // Add any necessary steps for aborting here, or keep this stage empty
+                    } else {
+                        echo "Unknown action selected."
+                        // Handle any other unexpected user inputs here
                     }
                 }
             }
