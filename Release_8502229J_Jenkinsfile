@@ -31,21 +31,26 @@ stages{
         }
         }
     }
-   stage('S4 8502229J') {
-            step{
-		input('8502229J, proceed to release the work to next phase?')
-	}
+  	stage ('S4_8502229J') {
+                    input {
+                        message "9225101A, proceed to release the work to next phase?"
+                        ok "Proceed?"
+                    }
+                     steps {
+                         echo 'S5_8502229J'
+                     }
+                }
 
-        }
+
 
 	stage('S5 8502229J') {
-
-            when{
-		expression {currentBuild.description == 'proceed'}
 		steps{
-			echo "Stage 5: Work Release"
-		}
+			if(params.CHOICE == 'proceed'){
+				echo "Stage 5: Work released"
+			}else{
+				
 	}
+		}
 			
 
         }
