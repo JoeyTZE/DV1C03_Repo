@@ -36,7 +36,7 @@ pipeline {
                     def userInput = input(
                         id: 'userInput',
                         message: "8502229J, proceed to release the work to the next phase?",
-                        parameters: [choice(name: 'ACTION', choices: ['Proceed', 'Abort'], description: 'Choose an action')]
+                        
                     )
                     
                     // Store the user input in an environment variable
