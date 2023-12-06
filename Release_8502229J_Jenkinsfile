@@ -33,8 +33,10 @@ stages{
     }
     stage('S4 8502229J') {
             
-              input {message "8502229J, proceed to release the work to next phase?"} 
-            
+              input{ message "8502229J, proceed to release the work to next phase?"} 
+            steps {
+              sh 'echo "Stage3_8502229J: Scan Test Completed"'   
+            }
         }
     
     stage('S5 8502229J') {
