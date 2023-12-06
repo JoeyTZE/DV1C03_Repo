@@ -33,7 +33,7 @@ stages{
     }
     stage('S4 8502229J') {
             steps {
-              sh 'read-p "8502229J,proceed to release the work to the next phase?" my_var'
+              input {"8502229J, proceed to release the work to next phase?}
             }
         }
     
