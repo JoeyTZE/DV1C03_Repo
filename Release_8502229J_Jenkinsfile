@@ -57,7 +57,7 @@ pipeline {
                         echo "User chose to abort. Aborting the process."
                         // Add any necessary steps for aborting here, or keep this stage empty
                     } else {
-                        echo "Unknown action selected."
+                        echo "Unknown action selected. ${userInput}"
                         // Handle any other unexpected user inputs here
                     }
                 }
