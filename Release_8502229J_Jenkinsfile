@@ -32,9 +32,9 @@ stages{
         }
     }
     stage('S4 8502229J') {
-            steps {
-              input message"8502229J, proceed to release the work to next phase?" 
-            }
+            
+              input {message "8502229J, proceed to release the work to next phase?"} 
+            
         }
     
     stage('S5 8502229J') {
