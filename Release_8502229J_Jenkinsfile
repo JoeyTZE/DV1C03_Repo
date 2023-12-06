@@ -33,13 +33,17 @@ stages{
     }
     stage('S4 8502229J') {
             
-              
+              input{ message "8502229J, proceed to release the work to next phase?"} 
            steps {
-              input{ message "8502229J, proceed to release the work to next phase?"}   
+              sh '' 
             }
         }
     
     stage('S5 8502229J') {
+
+            when{
+            not {sh' echo "Stage5_8502229J: Work Release - Stops" '}
+            }
             steps {
               sh 'echo "Stage5_8502229J: Work Release - Proceeds to the Next Phase" '
             }
