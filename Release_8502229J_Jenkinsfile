@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent anystages{
     stage('S1 8502229J') {
             steps {
               sh 'echo "Stage1_8502229J: Release Environment Preparation Completed" '   
@@ -38,5 +38,5 @@ pipeline{
               sh 'elif[$my_var == "Abort"]; then echo "Stage5_8502229J: Work Release - Stops" '
             }
         }
-  
+  }
 }      
