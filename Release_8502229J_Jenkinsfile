@@ -39,7 +39,7 @@ pipeline {
                         
                     )
                     
-                    // Store the user input in an environment variable
+                    
                     env.USER_INPUT = userInput
                 }
             }
@@ -52,10 +52,11 @@ pipeline {
 
                     if (userInput == 'Proceed') {
                         echo "User chose to proceed. Releasing the work to the next phase."
-                        // Add your steps to release work to the next phase here
-                    } if (userInput == 'Abort') {
+                        
+                    } 
+                    else if (userInput == 'Abort') {
                         echo "User chose to abort. Aborting the process."
-                        // Add any necessary steps for aborting here
+
                     }
                 }
             }
