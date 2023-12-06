@@ -54,7 +54,7 @@ pipeline {
                         echo "User chose to proceed. Releasing the work to the next phase."
                         
                     } 
-                    else if (userInput == 'Abort') {
+                    else {
                         echo "User chose to abort. Aborting the process."
 
                     }
