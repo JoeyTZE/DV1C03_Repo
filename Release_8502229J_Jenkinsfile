@@ -50,7 +50,7 @@ stages{
 
 
 	stage('S5 8502229J') {
-		 steps {
+		steps {
                 script {
                     def userInput = currentBuild.rawBuild.getAction(ParametersAction).getParameter('userInput').getValue()
 
@@ -63,6 +63,7 @@ stages{
                     }
                 }
             }
+        }
 			
 
         }
