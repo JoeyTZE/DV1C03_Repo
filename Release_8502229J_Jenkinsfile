@@ -34,10 +34,8 @@ pipeline{
     
     stage('S5 8502229J') {
             steps {
-              sh '
-                if[$my_var == "Proceed"]; then echo "Stage5_8502229J: Work Release - Proceeds to the Next Phase"
-              elif[$my_var == "Abort"]; then echo "Stage5_8502229J: Work Release - Stops
-              '
+              sh 'if[$my_var == "Proceed"]; then echo "Stage5_8502229J: Work Release - Proceeds to the Next Phase" '
+              sh 'elif[$my_var == "Abort"]; then echo "Stage5_8502229J: Work Release - Stops" '
             }
         }
   }
