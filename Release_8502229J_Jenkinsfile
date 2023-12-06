@@ -44,6 +44,7 @@ stages{
             when{
             not {sh' echo "Stage5_8502229J: Work Release - Stops" '}
             }
+            steps{sh ''}
             steps {
               sh 'echo "Stage5_8502229J: Work Release - Proceeds to the Next Phase" '
             }
