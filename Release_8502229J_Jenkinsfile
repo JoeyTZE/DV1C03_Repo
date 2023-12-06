@@ -37,19 +37,18 @@ stages{
 			}
 
         }
-    
-    stage('S5 8502229J') {
 
-            steps {
-              script{
-                if (parameters.CHOICE == 'yes'){
-                    echo 'Stage5_8502229J: Work Release - Proceeds to the Next Phrase'
-                }
-                else{
-                    echo 'S
-                }
-              }
-            }
+	stage('S5 8502229J') {
+
+            when{
+		not{
+			echo "Stage 5: Stop"
+		}
+	}
+			
+	steps{
+		echo "Stage 5: Work release"
+	}
         }
 }
 }
