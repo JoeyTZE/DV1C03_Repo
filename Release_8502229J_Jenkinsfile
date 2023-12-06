@@ -33,22 +33,21 @@ stages{
     }
    stage('S4 8502229J') {
             step{
-				input('8502229J, proceed to release the work to next phase?')
-			}
+		input('8502229J, proceed to release the work to next phase?')
+	}
 
         }
 
 	stage('S5 8502229J') {
 
             when{
-		not{
-			echo "Stage 5: Stop"
+		expression {currentBuild.description == 'proceed'}
+		steps{
+			echo "Stage 5: Work Release"
 		}
 	}
 			
-	steps{
-		echo "Stage 5: Work release"
-	}
+
         }
 }
 }
