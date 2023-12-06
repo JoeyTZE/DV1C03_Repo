@@ -9,9 +9,9 @@ pipeline{
     
     stage('S2 8502229J') {
             steps {
-              sh 'echo "Stage1_8502229J: Release Container WebApp_8502229J Created Completed"
-              docker rm WebApp_8502229J
-              docker run -d -it -p 31200:80 --name=WebApp_8502229J wb1_image_8502229j /bin/sh'
+              sh 'echo "Stage1_8502229J: Release Container WebApp_8502229J Created Completed" '
+              sh 'docker rm WebApp_8502229J '
+              sh 'docker run -d -it -p 31200:80 --name=WebApp_8502229J wb1_image_8502229j /bin/sh'
             }
         }
 
