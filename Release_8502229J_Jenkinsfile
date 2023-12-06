@@ -56,5 +56,4 @@ stages{
               sh 'echo "Stage5_8502229J: Work Release - Proceeds to the Next Phase" '
             }
         }
-  
-}      
+       
