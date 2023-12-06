@@ -38,7 +38,10 @@ stages{
                         id: 'userInput',
                         message: "8502229J, proceed to release the work to the next phase?",
                         parameters: [
-                            choice(name: 'ACTION', choices: ['Proceed', 'Abort'], description: 'Choose an action')
+                            [$class: 'ChoiceParameterDefinition', 
+                             name: 'ACTION', 
+                             description: 'Choose an action', 
+                             choices: ['Proceed', 'Abort']]
                         ]
                     )
                     
