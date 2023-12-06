@@ -43,17 +43,11 @@ stages{
         }
     
     stage('S5 8502229J') {
-
-            steps{
-            sh 'echo "Stage5_8502229J: Work Release - Stops" '
-            }
-            }
-            
-            }
-            
             
             steps {
               sh 'echo "Stage5_8502229J: Work Release - Proceeds to the Next Phase" '
             }
         }
+}
+}
        
