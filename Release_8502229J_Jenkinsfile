@@ -1,0 +1,44 @@
+pipeline{
+  agent any{
+    stage('S1 8502229J') {
+            steps {
+              sh 'echo "Stage1_8502229J: Release Environment Preparation Completed"'   
+            }
+        }
+
+    
+    stage('S2 8502229J') {
+            steps {
+              sh 'echo "Stage1_8502229J: Release Container WebApp_8502229J Created Completed"'
+              sh 'docker rm WebApp_8502229J'
+              sh 'docker run -d -it -p 31200:80 --name=WebApp_8502229J wb1_image_8502229j /bin/sh'
+            }
+        }
+
+    stage('S3 8502229J') {
+
+      parallel{
+            steps {
+              sh 'echo "Stage3_8502229J: API Test Completed"'   
+            }
+            steps {
+              sh 'echo "Stage3_8502229J: Scan Test Completed"'   
+            }
+        }
+    }
+    stage('S4 8502229J') {
+            steps {
+              sh 'read-p "8502229J,proceed to release the work to the next phase?" my_var'
+            }
+        }
+    
+    stage('S5 8502229J') {
+            steps {
+              sh '
+                if[$my_var == "Proceed"]; then echo "Stage5_8502229J: Work Release - Proceeds to the Next Phase"
+              elif[$my_var == "Abort"]; then echo "Stage5_8502229J: Work Release - Stops
+              '
+            }
+        }
+  }
+}      
