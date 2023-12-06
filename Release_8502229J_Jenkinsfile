@@ -32,27 +32,27 @@ stages{
         }
     }
   	  stage('S4 8502229J') {
-            steps {
-                script {
+		steps {
+		 script {
                     def userInput = input(
                         id: 'userInput',
-                        message: "8502229J, proceed to release the work to the next phase?"
+                        message: "8502229J, proceed to release the work to the next phase?",
+                        parameters: [choice(name: 'ACTION', choices: ['Proceed', 'Abort'], description: 'Choose an action')]
                     )
                     
-                    // Storing the user input for use in the next stage
-                    currentBuild.rawBuild.addAction(new ParametersAction([
-                        new StringParameterValue('userInput', userInput)
-                    ]))
+                    // Store the user input in an environment variable
+                    env.USER_INPUT = userInput
                 }
             }
+        }
         }
 
 
 
 	stage('S5 8502229J') {
-		steps {
+	 steps {
                 script {
-                    def userInput = currentBuild.rawBuild.getAction(ParametersAction).getParameter('userInput').getValue()
+                    def userInput = env.USER_INPUT
 
                     if (userInput == 'Proceed') {
                         echo "User chose to proceed. Releasing the work to the next phase."
