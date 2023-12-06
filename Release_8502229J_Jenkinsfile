@@ -42,7 +42,7 @@ stages{
     stage('S5 8502229J') {
 
             when{
-            not {sh' echo "Stage5_8502229J: Work Release - Stops" '}
+            not {sh 'echo "Stage5_8502229J: Work Release - Stops" '}
             }
             steps{sh ''}
             steps {
