@@ -31,18 +31,12 @@ stages{
         }
         }
     }
-  	   stage('S4 8502229J') {
+  	  stage('S4 8502229J') {
             steps {
                 script {
                     def userInput = input(
                         id: 'userInput',
-                        message: "8502229J, proceed to release the work to the next phase?",
-                        parameters: [
-                            [$class: 'ChoiceParameterDefinition', 
-                             name: 'ACTION', 
-                             description: 'Choose an action', 
-                             choices: ['Proceed', 'Abort']]
-                        ]
+                        message: "8502229J, proceed to release the work to the next phase?"
                     )
                     
                     // Storing the user input for use in the next stage
